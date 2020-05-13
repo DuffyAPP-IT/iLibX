@@ -1,0 +1,2 @@
+/usr/bin/ar qc libiLibX.a  CMakeFiles/iLibX.dir/library.c.o
+/usr/bin/ranlib libiLibX.a
