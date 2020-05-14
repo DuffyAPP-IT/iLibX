@@ -1,21 +1,26 @@
 #ifndef ILIBX_LIBRARY_H
 #define ILIBX_LIBRARY_H
-
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <string.h>
 //FS mgmt related functions - utilising sshpass,scp - using default iOS pw.
-int ios_makevol_apfs(char *volname, char *role);
-int ios_mountdisk(char *diskid, char *mntpnt);
-int ios_makedir(char *absolutedirectory);
+int ios_makevol_apfs(char *volname, char *role); //done
+int ios_mountdisk(char *diskid, char *mntpnt); //done
+int ios_makedir(char *absolutedirectory); //done
 int ios_send_f(char *filetosend, char *remotedir);
 int ios_rec_f(char *remotefiledir, char *localfname);
 int ios_checkdirexists(char *dir);
 
 //exec commands, pull exit codes and other data from connected device.
-char *ios_runc(char *command);
-int *ios_blob_fetch(char *ptype, char *eciddec, char *boardconf);
-char *ios_ecid_grab();
-char *ios_ptype_grab();
-char *ios_bconf_grab();
-int ios_ver_check();
+int ios_fetch_access(); //done
+char *ios_run_comm(char *command, char *pass); //done
+int macos_run_comm(char *command); //done
+char *macos_run_str(char *command); //done
+int *ios_blob_fetch(char *ptype, char *eciddec, char *boardconf); //done
+char *ios_ecid_fetch(); //done
+char *ios_ptype_fetch(); //done
+char *ios_bconf_fetch(); //done
+int ios_ver_check(); //done
 
 //dual-boot related functions
 int ios_asr_process(char *rootfsdmg, char *rootfsoutdmg);
