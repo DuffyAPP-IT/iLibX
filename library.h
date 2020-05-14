@@ -7,9 +7,9 @@
 int ios_makevol_apfs(char *volname, char *role); //done
 int ios_mountdisk(char *diskid, char *mntpnt); //done
 int ios_makedir(char *absolutedirectory); //done
-int ios_send_f(char *filetosend, char *remotedir);
-int ios_rec_f(char *remotefiledir, char *localfname);
-int ios_checkdirexists(char *dir);
+int ios_send_f(char *filetosend, char *remotedir); //done
+int ios_rec_f(char *remotefiledir, char *localfname); //done
+int ios_checkdirexists(char *dir); //done
 
 //exec commands, pull exit codes and other data from connected device.
 int ios_fetch_access(); //done
@@ -27,6 +27,6 @@ int ios_asr_process(char *rootfsdmg, char *rootfsoutdmg);
 int ios_fstab_p(char *fstabloc,char *fromval,char *toval);
 int ios_sep_c(char *newmnt);
 int ios_bb_c(char *newmnt);
-int ios_dtre_patch(int iosver,char *dtrein, char *dtreout, char *IM4M);
+//int ios_dtre_patch(int iosver,char *dtrein, char *dtreout, char *IM4M);
 
 #endif //ILIBX_LIBRARY_H

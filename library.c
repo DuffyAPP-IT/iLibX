@@ -88,7 +88,18 @@ int ios_rec_f(char *remotefiledir, char *localfname){
 }
 
 
-
+//returns 0 on success 1 if dir already exists
+int ios_checkdirexists(char *dir){
+    char *com1 = ("mkdir");
+    char *com2 = (">/dev/null 2>/dev/null\; echo \$?");
+    char dircheck[500];
+    sprintf(dircheck, "%s %s %s", com1, dir, com2);
+    if (atoi(ios_run_comm(dircheck,"alpine"))==0){
+        return 0;
+    } else{
+        return 1;
+    }
+}
 
 
 
@@ -212,3 +223,44 @@ int ios_ver_check(){
     //return should be 9,10,11,12,13 as examples.
     return atoi(ios_run_comm("sw_vers \| grep ProductVersion \| grep -o '[1][0-4]'","alpine"));
 }
+
+
+
+
+
+//dual-boot related stuff
+
+//patch fstab locally after using ios_rec_f to pull fstab
+int ios_fstab_p(char *fstabloc,char *fromval,char *toval){
+    //for command to patch concat
+    char comm[900];
+    sprintf(comm,"sed -i '' 's/%s/%s/g' %s",fromval, toval, fstabloc);
+    return macos_run_comm(comm);
+}
+
+//example ios_sep_mov("/mnt1");
+int ios_sep_c(char *newmnt){
+    char mntcheck[900];
+    char comm[900];
+    sprintf(mntcheck,"df \| grep mnt1 >/dev/null 2>/dev/null \; echo $?",newmnt);
+    if (atoi(ios_run_comm(mntcheck,"alpine"))==0){
+        sprintf(comm,"cp -a /usr/standalone/firmware/sep* %s/usr/standalone >/dev/null 2>/dev/null \; echo $?",newmnt);
+        return atoi(ios_run_comm(comm,"alpine"));
+    } else{
+        return 1;
+    }
+}
+
+//^
+int ios_bb_c(char *newmnt){
+    char mntcheck[900];
+    char comm[900];
+    sprintf(mntcheck,"df \| grep mnt1 >/dev/null 2>/dev/null \; echo $?",newmnt);
+    if (atoi(ios_run_comm(mntcheck,"alpine"))==0){
+        sprintf(comm,"cp -a /usr/local %s/usr/local >/dev/null 2>/dev/null \; echo $?",newmnt);
+        return 0;
+    } else{
+        return 1;
+    }
+}
+
