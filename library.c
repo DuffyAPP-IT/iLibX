@@ -1,6 +1,7 @@
 #include "library.h"
 #include <stdio.h>
 
+//add checks for prereq's
 //FS mgmt related functions - utilising sshpass,scp - using default iOS pw.
 
 //Pass a char array containing the volume name to create.
@@ -13,7 +14,7 @@ int ios_makevol_apfs(char *volname,char *role){
     sprintf(commout, "%s%s %s %s %s >/dev/null 2>/dev/null \; echo $?", newfs,role,args,volname,tdisk);
     if (atoi(ios_run_comm(commout,"alpine"))==0){
         return 0;
-    }else{
+    } else{
         return 1;
     }
 }
@@ -103,9 +104,6 @@ int ios_checkdirexists(char *dir){
 
 
 
-
-
-
 //Exec Commands etc..
 //pass ip address of device & relevant port.
 // ios_fetch_access("127.0.0.1","2222");
@@ -155,7 +153,7 @@ int macos_run_comm(char *command){
     return atoi(out);
 }
 
-//returns output of command run on mac.
+//returns output of command run on mac(first line of output).
 char *macos_run_str(char *command){
     char com2[1024];
     strcpy(com2, command);
