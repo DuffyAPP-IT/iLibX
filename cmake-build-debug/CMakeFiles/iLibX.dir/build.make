@@ -80,15 +80,15 @@ include CMakeFiles/iLibX.dir/flags.make
 CMakeFiles/iLibX.dir/library.c.o: CMakeFiles/iLibX.dir/flags.make
 CMakeFiles/iLibX.dir/library.c.o: ../library.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/iLibX.dir/library.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iLibX.dir/library.c.o   -c /Users/a010010/Documents/GitHub/iLibX/library.c
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iLibX.dir/library.c.o   -c /Users/a010010/Documents/GitHub/iLibX/library.c
 
 CMakeFiles/iLibX.dir/library.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/iLibX.dir/library.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/a010010/Documents/GitHub/iLibX/library.c > CMakeFiles/iLibX.dir/library.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/a010010/Documents/GitHub/iLibX/library.c > CMakeFiles/iLibX.dir/library.c.i
 
 CMakeFiles/iLibX.dir/library.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iLibX.dir/library.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/a010010/Documents/GitHub/iLibX/library.c -o CMakeFiles/iLibX.dir/library.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/a010010/Documents/GitHub/iLibX/library.c -o CMakeFiles/iLibX.dir/library.c.s
 
 # Object files for target iLibX
 iLibX_OBJECTS = \
