@@ -70,7 +70,7 @@ int iosSendFile(char *filetosend, char *remotedir, char *ipin, char *port,char *
     if (access(filetosend, F_OK) != -1){
         char commout[800];
         if (access("resources/sshpass", F_OK) != -1) {
-            sprintf(commout, "resources/sshpass -p %s scp -P %s -o \"UserKnownHostsFile=/dev/null\" -o \"StrictHostKeyChecking=no\" %s root@%s:%s >/dev/null 2>/dev/null \; echo $?", passwd, port, filetosend, ipin, remotedir);
+            sprintf(commout, "resources/sshpass -p %s scp -P %s -o \"UserKnownHostsFile=/dev/null\" -o \"StrictHostKeyChecking=no\" %s root@%s:%s%s >/dev/null 2>/dev/null \; echo $?", passwd, port, filetosend, ipin, remotedir,filetosend);
             char *com = commout;
             char out[400];
             FILE *shell = popen(com, "r");
@@ -164,6 +164,27 @@ int iosRunGetExit(char *command, char *ipin, char *port, char *passwd){
         fgets(out, sizeof(out), shell);
         pclose(shell);
         return atoi(out);
+    } else{
+        return 1;
+    }
+}
+
+
+char *iosRunComm(char *command, char *ipin, char *port, char *passwd){
+    char commout[3000];
+    if (access("resources/sshpass", F_OK) != -1) {
+        sprintf(commout,
+                "resources/sshpass -p %s ssh -o \"UserKnownHostsFile=/dev/null\" -o \"StrictHostKeyChecking=no\" root@%s -p %s %s 2>/dev/null",
+                passwd, ipin, port, command);
+        if (DEBUG == 1) {
+            printf("LOG -> EXECUTING -> %s\n", commout);
+        }
+        char *com = commout;
+        char out[400];
+        FILE *shell = popen(com, "r");
+        fgets(out, sizeof(out), shell);
+        pclose(shell);
+        return out;
     } else{
         return 1;
     }
@@ -301,15 +322,15 @@ int iosMountVolume(char *diskid, char *mntpnt,char *ipin,char *port,char *passwd
  *
  */
 int iosMakeDirectory(char *absolutedirectory,char *ipin,char *port,char *passwd){
-        char *com1 = ("mkdir");
-        char *com2 = (">/dev/null 2>/dev/null\; echo \$?");
-        char dircheck[500];
-        sprintf(dircheck, "%s %s %s", com1, absolutedirectory, com2);
-        if (iosRunGetExit(dircheck,ipin,port,passwd)==0){
-            return 0;
-        } else{
-            return 1;
-        }
+    char *com1 = ("mkdir");
+    char *com2 = (">/dev/null 2>/dev/null\; echo \$?");
+    char dircheck[500];
+    sprintf(dircheck, "%s %s %s", com1, absolutedirectory, com2);
+    if (iosRunGetExit(dircheck,ipin,port,passwd)==0){
+        return 0;
+    } else{
+        return 1;
+    }
 }
 
 /*
@@ -375,7 +396,7 @@ int fetchPortState(char *ipin,char *port){
  *
  */
 char *iosFetchECID(){
-    if (macosRunComm("ideviceinfo | grep UniqueChipID | grep -o '[0-9][0-9][0-9][0-9][0-9][0-9][0-9]*'")==0){
+    if (macosRunGetExit("ideviceinfo | grep UniqueChipID | grep -o '[0-9][0-9][0-9][0-9][0-9][0-9][0-9]*'")==0){
         return macosRunComm("ideviceinfo | grep UniqueChipID | grep -o '[0-9][0-9][0-9][0-9][0-9][0-9][0-9]*'");
     }
     else{
@@ -392,7 +413,7 @@ char *iosFetchECID(){
  *
  */
 char *iosFetchPType(){
-    if (macosRunComm("ideviceinfo | grep ProductType | grep -o 'iPhone.*'")==0){
+    if (macosRunGetExit("ideviceinfo | grep ProductType | grep -o 'iPhone.*'")==0){
         return macosRunComm("ideviceinfo | grep ProductType | grep -o 'iPhone.*'");
     }
     else{
@@ -409,7 +430,7 @@ char *iosFetchPType(){
  *
  */
 char *iosFetchBoardConfig(){
-    if (macosRunComm("ideviceinfo | grep HardwareModel | cut -f2- -d' '")==0){
+    if (macosRunGetExit("ideviceinfo | grep HardwareModel | cut -f2- -d' '")==0){
         return macosRunComm("ideviceinfo | grep HardwareModel | cut -f2- -d' '");
     }
     else{
@@ -439,6 +460,7 @@ int *iosFetchSHSH(char *ptype, char *eciddec, char *boardconf){
         fclose(fileout);
         char comm[1200];
         sprintf(comm,"./tsschecker -s -l -e %s -d %s --boardconfig %s", eciddec, ptype, boardconf);
+        printf("%s",comm);
         if(macosRunGetExit(comm)==0){
             return 0;
         }

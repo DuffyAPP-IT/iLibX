@@ -64,10 +64,10 @@ RM = "/Users/a010010/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX
+CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX-working
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -94,14 +94,14 @@ clean: CMakeFiles/iLibX.dir/clean
 CMakeFiles/iLibX.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/iLibX.dir/build.make CMakeFiles/iLibX.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/iLibX.dir/build.make CMakeFiles/iLibX.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target iLibX"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target iLibX"
 .PHONY : CMakeFiles/iLibX.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/iLibX.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/iLibX.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/iLibX.dir/rule
 
 # Convenience name for target.

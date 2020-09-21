@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/a010010/Documents/GitHub/iLibX/library.c" "/Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles/iLibX.dir/library.c.o"
+  "/Users/a010010/Documents/GitHub/iLibX-working/library.c" "/Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles/iLibX.dir/library.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

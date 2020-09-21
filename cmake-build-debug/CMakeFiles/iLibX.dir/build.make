@@ -63,10 +63,10 @@ RM = "/Users/a010010/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX
+CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX-working
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/iLibX.dir/depend.make
@@ -79,16 +79,16 @@ include CMakeFiles/iLibX.dir/flags.make
 
 CMakeFiles/iLibX.dir/library.c.o: CMakeFiles/iLibX.dir/flags.make
 CMakeFiles/iLibX.dir/library.c.o: ../library.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/iLibX.dir/library.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iLibX.dir/library.c.o   -c /Users/a010010/Documents/GitHub/iLibX/library.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/iLibX.dir/library.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/iLibX.dir/library.c.o   -c /Users/a010010/Documents/GitHub/iLibX-working/library.c
 
 CMakeFiles/iLibX.dir/library.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/iLibX.dir/library.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/a010010/Documents/GitHub/iLibX/library.c > CMakeFiles/iLibX.dir/library.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/a010010/Documents/GitHub/iLibX-working/library.c > CMakeFiles/iLibX.dir/library.c.i
 
 CMakeFiles/iLibX.dir/library.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iLibX.dir/library.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/a010010/Documents/GitHub/iLibX/library.c -o CMakeFiles/iLibX.dir/library.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/a010010/Documents/GitHub/iLibX-working/library.c -o CMakeFiles/iLibX.dir/library.c.s
 
 # Object files for target iLibX
 iLibX_OBJECTS = \
@@ -100,7 +100,7 @@ iLibX_EXTERNAL_OBJECTS =
 libiLibX.a: CMakeFiles/iLibX.dir/library.c.o
 libiLibX.a: CMakeFiles/iLibX.dir/build.make
 libiLibX.a: CMakeFiles/iLibX.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libiLibX.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libiLibX.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/iLibX.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/iLibX.dir/link.txt --verbose=$(VERBOSE)
 
@@ -114,6 +114,6 @@ CMakeFiles/iLibX.dir/clean:
 .PHONY : CMakeFiles/iLibX.dir/clean
 
 CMakeFiles/iLibX.dir/depend:
-	cd /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/a010010/Documents/GitHub/iLibX /Users/a010010/Documents/GitHub/iLibX /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles/iLibX.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/a010010/Documents/GitHub/iLibX-working /Users/a010010/Documents/GitHub/iLibX-working /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles/iLibX.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/iLibX.dir/depend
 

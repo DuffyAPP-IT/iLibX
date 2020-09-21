@@ -68,10 +68,10 @@ RM = "/Users/a010010/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX
+CMAKE_SOURCE_DIR = /Users/a010010/Documents/GitHub/iLibX-working
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/a010010/Documents/GitHub/iLibX-working/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
