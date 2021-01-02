@@ -13,7 +13,12 @@
 char *macosRunComm(char *command){
     //Move input command to static char array
     char toexec[1000];
-    strcpy(toexec, command);
+    if (strlen(command) < 1000)
+        strcpy(toexec, command);
+    else {
+        puts("Error - command is too large.");
+        exit(1);
+    }
     char commout[1000];
     //move from static to dynamic to mitigate issue
     sprintf(commout, "%s", toexec);
@@ -40,7 +45,12 @@ int macosRunGetExit(char *command){
     //redirect stdout and stderr, echo process exit code to stdout
     char *com2 = " >/dev/null 2>/dev/null; echo $?";
     char com1[2400];
-    strcpy(com1, command);
+    if (strlen(command) < 2400)
+        strcpy(com1, command);
+    else {
+        puts("Error - command is too large.");
+        exit(1);
+    }
     char commout[2400];
     sprintf(commout, "%s %s", com1, com2);
     char *com = commout;
